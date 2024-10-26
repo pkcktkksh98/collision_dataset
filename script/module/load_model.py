@@ -16,7 +16,7 @@ def load_model(data):
    label1 = data['SEVERITYCODE']
 
    x_train, x_test, y_train, y_test = train_test_split(feature1,label1,
-                                                      train_size=0.8,
+                                                      test_size=0.05,
                                                       shuffle=True,
                                                       random_state=42)
    
