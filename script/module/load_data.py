@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 def load_data():
-   df=pd.read_csv('../dataset/Collisions.csv',delimiter=',', index_col=False)
+   df=pd.read_csv('dataset/Collisions.csv',delimiter=',', index_col=False)
    # print(df)
 
    data = df.fillna('N/A')

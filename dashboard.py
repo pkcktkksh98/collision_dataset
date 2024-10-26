@@ -1,8 +1,8 @@
 import streamlit as st
 import joblib
 import numpy as np
-from module.load_data import load_data
-from module.load_model import load_model
+from script.module.load_data import load_data
+from script.module.load_model import load_model
 labels = [
     "Property Damage Only Collision", 
     "Injury Collision", 
@@ -25,7 +25,7 @@ def main():
         st.title("Exploratory Data")
         st.header("Correlation Coefficient")
 
-        st.image('../img/correlation.png')
+        st.image('img/correlation.png')
 
     elif page == "Modelling":
         st.title("Modelling")
@@ -41,7 +41,7 @@ def main():
     else:
         # Load the model
         page = st.selectbox("Select a model:",["knn.pkl","xgb.pkl", "mlp.pkl"])
-        model = joblib.load(f'../model/{page}')  # Update with your actual model name
+        model = joblib.load(f'model/{page}')  # Update with your actual model name
         labels = [
             "Property Damage Only Collision", 
             "Injury Collision", 

@@ -49,16 +49,23 @@ def predict(features: Features, model: Model):
     
  
     model  = joblib.load(f'../../model/{model.MODEL}')
-    
 
-    try:
+    if model.MODEL == 'knn.pkl':
         pred = model.predict(features_input)
         pred_labels = labels[pred[0]]
         proba = max(proba[0])   
         return {"prediction": pred_labels, "prediction_score": proba}
+    elif model.MODEL == 'xgb.pkl':
+        pred = model.predict(features_input)
+        pred_labels = labels[pred[0]]
+        proba = max(proba[0])   
+        return {"prediction": pred_labels}
+    else:
+        pred = model.predict(features_input)
+        pred = np.argmax(pred, axis=1)
+        pred_labels = labels[pred[0]]
+        return {"prediction": pred_labels}
 
-    except Exception as e:
-        return {"prediction": pred_labels, "error": str(e)}
     ##---------------------
     # # proba = model.predict_proba(features_input)
     # pred_labels = labels[pred[0]]

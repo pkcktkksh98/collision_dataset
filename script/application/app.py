@@ -4,7 +4,7 @@ import numpy as np
 
 # Load the model
 page = st.selectbox("Select a model:",["knn.pkl","xgb.pkl", "mlp.pkl"])
-model = joblib.load(f'../../model/{page}')  # Update with your actual model name
+model = joblib.load(f'model/{page}')  # Update with your actual model name
 labels = [
     "Property Damage Only Collision", 
     "Injury Collision", 

@@ -5,9 +5,9 @@ from sklearn.metrics import accuracy_score
 import pandas as pd
 
 def load_model(data):
-   knn=joblib.load("../model/knn.pkl")
-   mlp=joblib.load("../model/mlp.pkl")
-   xgb=joblib.load("../model/xgb.pkl")
+   knn=joblib.load("model/knn.pkl")
+   mlp=joblib.load("model/mlp.pkl")
+   xgb=joblib.load("model/xgb.pkl")
 
    feature1 = data[[ 'PERSONCOUNT', 'PEDCOUNT', 'PEDCYLCOUNT', 'VEHCOUNT',
        'INJURIES', 'SERIOUSINJURIES', 'JUNCTIONTYPE', 'SDOT_COLCODE',
